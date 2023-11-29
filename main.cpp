@@ -1,29 +1,33 @@
 #include <iostream>
 
 using namespace std;
-const int ARRAY_LENGHT = 5;
+
+void func1(int func_number) {
+    func_number = 50;
+}
+
+void func2(int *func_number) {
+    *func_number = 50;
+}
+
 int main()
 {
-    int elementIndex = 0;
-    int newVaule = 0;
-
-    int myNumbers[ARRAY_LENGHT] = {5,10,0,-101,20};
-
-    cout << "Input index element in array: ";
-    cin >> elementIndex;
-    cout << "Input new vaule: ";
-    cin >> newVaule;
-
-    myNumbers[elementIndex] = newVaule;
+    int func_number = 10;
+    cout << func_number << endl;
+    func1(func_number);
+    cout << func_number << endl;
+    func2(&func_number);
+    cout << func_number << endl;
 
 
+    int A[10] = {1,2,75,4,5,6,7,8,9,10};
 
-    cout << "Element " << elementIndex << " myNumbers equals: ";
-    cout << myNumbers[elementIndex] << endl;
-
-    for (int i = 0; i < ARRAY_LENGHT; i++){
-        cout << myNumbers[i] << ",";
-    }
+    cout << A << endl;
+    cout << A[1] << endl;
+    cout << *A << endl;
+    cout << *(A+1) << endl;
+    cout << *(A+2) << endl;
+    cout << A+1 << endl;
 
     return 0;
 }
