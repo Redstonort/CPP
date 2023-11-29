@@ -58,7 +58,7 @@ int main()
     cout << "Your mission is to destroy 3 enemy ships" << endl;
     cout << endl << " " << water << " - water | " << destroyedShip << " - destroyed ship |" << unknownLocation << "  - unknown location | " << explosion << " - explosion";
 
-    while (enemyShip1Alive == true and enemyShip2Alive == true and enemyShip3Alive == true) {
+    while (enemyShip1Alive == true or enemyShip2Alive == true or enemyShip3Alive == true) {
 
         cout << endl << "choose coordinates where you want to shot(1-10)" << endl;
         cout << ">";
@@ -67,7 +67,7 @@ int main()
         cout << endl;
 
         enemyLineLocations[shot - 1] = explosion;
-
+        enemyLine[shot-1] = shot; //added Boris num x 
         for (int i = 0; i < enemyLine.size(); i++) {
             cout << enemyLineLocations[i];
         }
@@ -89,7 +89,7 @@ int main()
             }           
 ;       }
 
-        cout << "\n\n1 = true | 0 = false" << enemyShip1Alive << endl;
+        cout << "\n\n1 = true | 0 = false" << endl;
         cout << "\nEnemy1 Alive?   " << enemyShip1Alive << endl;
         cout << "Enemy2 Alive?   " << enemyShip2Alive << endl;
         cout << "Enemy2 Alive?   " << enemyShip3Alive << endl;
