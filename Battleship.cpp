@@ -43,6 +43,10 @@ int main()
         enemyLineLocations[i] = unknownLocation;
     }
 
+    for (int i = 0; i < enemyLine.size(); i++) {
+        enemyLine[i] = i+1;
+    }
+
     while (enemyShip2Location == enemyShip1Location) {
         enemyShip2Location = GetRandomNumber(0, 9);
     }
@@ -67,7 +71,7 @@ int main()
         cout << endl;
 
         enemyLineLocations[shot - 1] = explosion;
-        enemyLine[shot-1] = shot; //added Boris num x 
+
         for (int i = 0; i < enemyLine.size(); i++) {
             cout << enemyLineLocations[i];
         }
@@ -78,18 +82,18 @@ int main()
         else{
             
             enemyLineLocations[shot - 1] = destroyedShip;
-            if (enemyLine[shot - 1] = enemyShip1Location) {
+            if (enemyLine[shot - 1] == enemyShip1Location) {
                 enemyShip1Alive = false;
             }
-            if (enemyLine[shot - 1] = enemyShip2Location) {
+            if (enemyLine[shot - 1] == enemyShip2Location) {
                 enemyShip2Alive = false;
             }
-            if (enemyLine[shot - 1] = enemyShip3Location) {
+            if (enemyLine[shot - 1] == enemyShip3Location) {
                 enemyShip3Alive = false;
             }           
 ;       }
 
-        cout << "\n\n1 = true | 0 = false" << endl;
+        cout << "\n\n1 = true | 0 = false" << enemyShip1Alive << endl;
         cout << "\nEnemy1 Alive?   " << enemyShip1Alive << endl;
         cout << "Enemy2 Alive?   " << enemyShip2Alive << endl;
         cout << "Enemy2 Alive?   " << enemyShip3Alive << endl;
@@ -99,6 +103,8 @@ int main()
         }
 
     }
+
+    cout << "Mission Completed Thanks for playing!";
 
     return 0;
 }
